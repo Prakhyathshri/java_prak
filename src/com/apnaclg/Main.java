@@ -2,10 +2,186 @@ package com.apnaclg;
 
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
+    public static void printjava(){
+        System.out.println("Hello Java");
+    }
+
+    public static void printname(String name){
+        System.out.println(name);
+    }
+
+    public static void printSum(int a, int b){
+        int sum = a + b;
+        System.out.println(sum);
+    }
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int myNum = (int)(Math.random()*100);
+        int userNum;
+        do{
+            System.out.println("Guess my number: ");
+            userNum = sc.nextInt();
+            if (userNum == myNum) {
+                System.out.println("WOW, Your number is correct");
+                break;
+            }
+            else if(userNum > myNum){
+                System.out.println("Your number is large, guess smallers number");
+            }
+            else{
+                System.out.println("Your number is small, guess bigger number");
+            }
+        } while(userNum >= 0);
+
+        printSum(2,3);
+        printSum(22,34);
+        printname("yuva");
+        printname("Shri");
+        printjava();
+        printjava();
+        printjava();
+
+        TRY AND CATCH EXCEPTIONAL HANDLING
+
+        int[] m = {45,23,45};
+//        System.out.println(m[5]);  // this will give an exceptional error
+//        System.out.println("Hi");  // this will also not be printed
+
+        try{
+            System.out.println(m[5]);
+        } catch(Exception exception){ //This will not give error and will print the next code part without error
+            // Do things after catching
+            System.out.println("Hi");
+        }
+        //BREAK AND CONTINUE
+
+        int i = 0;
+        while(true){
+            if(i == 3){
+                i++;
+                continue;
+            }
+            System.out.println(i);
+            i++;
+
+            if(i > 5){
+                break;
+            }
+        }
+
+        int number;
+        do{
+            System.out.println("Enter a number: ");
+            number = sc.nextInt();
+            System.out.println("Your number is " + number);
+        }while(number >= 0);
+        System.out.println("The end");
+
+        int k = 100;
+        do {
+            System.out.println(k + " N");
+            k--;
+        }while(k >= 1);
+
+        int ii = 100;
+        while(ii >= 1){
+            System.out.println(ii + " Hi");
+            ii--;
+        }
+
+        for(int i = 100; i > 0; i-- ){
+            System.out.println(i);
+        }
+
+        for(int i = 1; i <= 100; i++ ){
+            System.out.println(i);
+        }
+
+        int day = 4;
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            default:
+                System.out.println("Thursday to sunday");
+        }
+
+        System.out.print("Enter cash: ");
+        int cash = sc.nextInt();
+        if (cash < 10){  //Need to use curly braces or blocks inside of it is a multiple line of code
+            System.out.println("Cant buy anything");
+            System.out.println("Get more cash");
+        }
+        else if(cash > 10 && cash < 40){
+            System.out.println("Can get only one thing");
+        }
+        else{
+            System.out.println("Cam get both");
+        }
+
+        int aa = 30;
+        int bb = 25;
+
+        if (aa < 50 || bb < 55)
+            System.out.println("Atleast one Less than 50");
+        else
+            System.out.println("Not even one less than 50");
+
+        if (aa < 50 && bb < 55)
+            System.out.println("Both Less than 50");
+        else
+            System.out.println("Both Not less than 50");
+
+        boolean isSunup = true;
+        if(isSunup)  //This condition will check for the true statement
+            System.out.println("day");
+        else
+            System.out.println("Night");
+
+        if(!isSunup)  //This condition will check for the false statement
+            System.out.println("day");
+        else
+            System.out.println("Night");
+
+        if(isSunup == true)
+            System.out.println("day");
+        else
+            System.out.println("Night");
+
+        int ae = 30;
+        if(ae > 18)
+            System.out.println("Can vote");
+        else
+            System.out.println("Cant vote");
+
+        System.out.print("Please enter you address: ");
+        String Add = sc.nextLine();
+        System.out.println(Add);
+
+        System.out.print("Input you name: ");
+        String nam = sc.next();
+        System.out.println(nam);
+
+        System.out.println("Input you age: ");
+        float bc = sc.nextFloat();
+        System.out.println(bc);
+
+        System.out.println("Input you age: ");
+        int agee = sc.nextInt();
+        System.out.println(agee);
+
 
 //     Our first program
         System.out.println("Hello world ");
@@ -74,6 +250,31 @@ public class Main {
 //        and we use CAPS for CONSTANT value such as PI as an indication that it is a constant
 
         System.out.println("OPERATORS");
+
+        int a = 1;
+        int b = 2;
+        int sum = a + b;
+        System.out.println(sum);
+//        + - * / % are all arethematic operatots
+        int numb = 1;
+        numb = numb + 1;
+        numb++;
+//        The above is the UNARY operator
+        System.out.println(numb);
+
+        int i = 1;
+        System.out.println(i++); //This will print and then chnage the value of i
+        System.out.println(i);
+        System.out.println(++i); //This will change and then print the value of i
+        System.out.println(i);
+
+        System.out.println("MATH CLASS in JAVA");
+
+        System.out.println(Math.max(5,6));
+        System.out.println(Math.min(5,6));
+        System.out.println(Math.random());
+        System.out.println((int)Math.random()); //This will always give 0, so we will multiply it by 100 and then it will give the next two decimal value in int
+        System.out.println((int)(Math.random()*100));
 
 
 
